@@ -4,6 +4,11 @@
   
 
 
+//1. The Social media feed (Facebook, Twitter)
+// 2. The E-commerce websites for displaying product list (Amazon, eBay)
+// 3. Music Streaming Apps for listing songs in playlist (Spotify, Apple Music)
+// 4. News Websites for displaying articles (CNN, BBC)
+// 5. The Job portals for listing job openings (LinkedIn, Indeed)
 
 
 
@@ -12,17 +17,24 @@
 
 // Use a while loop to log to the console the numbers from 1 to 10
 
-
-
-
-
+let i = 1;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
 
 
 /****************** Exercise 3 ********************/
 
 // Use a while loop to calculate the sum of even numbers from 2 to 20
 
-
+let sum = 0;
+let num = 2;
+while (num <= 20) {
+  sum += num;
+  num += 2;
+}
+console.log(`The sum of even numbers from 2 to 20 is ${sum}`);
 
 
 
@@ -33,8 +45,10 @@
 // Implement a countdown using a while loop
 let countdown = 10;
 
-
-
+while (countdown >= 0) {
+  console.log(countdown);
+  countdown--;
+}
 
 
 
@@ -64,8 +78,13 @@ while (guess !== secretNumber) {
 // 2. The user will see the alert "Too high!" if the number is too high. 
 // 3. The user will see the alert "`Congratulations! You guessed the number [NUMBER] in [ATTEMPTS] attempts.`)" if the number is correct. 
 
-
-
+if (guess < secretNumber) {
+    console.log("Too low!");
+  } else if (guess > secretNumber) {
+    console.log("Too high!");
+  } else {
+    console.log(`Congratulations! You guessed the number ${secretNumber} in ${attempts} attempts.`);
+  }
 
 /****************** Exercise 6 ********************/
 
@@ -80,7 +99,7 @@ const itemPrice = 3;
 console.log("Welcome to the Vending Machine!");
 console.log(`You have $${userBalance} in your balance.`);
 
-while (//YOUR CODE HERE//) {
+while (userBalance >= itemPrice) {
     console.log("Available options:");
     console.log("1. Snack A ($3)");
     console.log("2. Snack B ($2)");
@@ -96,7 +115,7 @@ while (//YOUR CODE HERE//) {
         userBalance -= 2;
     } else if (choice === 3){
         console.log("Thank you for using the Vending Machine. Have a great day!");
-        userBalance = 0;
+    
     } else {
         console.log("Invalid choice. Please select a valid option.");
     }
@@ -104,6 +123,9 @@ while (//YOUR CODE HERE//) {
     console.log(`Your current balance: $${userBalance}`);
 }
 
-console.log("Insufficient balance. Please add more money to use the Vending Machine.");
 
 // 1. Write the condition so that the while loop will eventually stop. 
+
+if (userBalance < itemPrice) {
+    console.log("Insufficient balance. Please add more money to use the Vending Machine.");
+  }
